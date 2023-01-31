@@ -1,0 +1,38 @@
+<h1 class="text-primary text-center">formulario tarea asincrona eliminar y agregar</h1>
+<table class="table m-5 border">
+    <thead class="thead-light">
+        <tr>
+            <th  scope="col">numero</th>
+            <th  scope="col">nobmre</th>
+            <th  scope="col">apellido</th>
+            <th  scope="col">carrera</th>
+            <th  scope="col">eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of array;let indexOfelement=index;">
+            <td scope="row">{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido  | lowercase }}</td>
+            <td>{{item.carrera  | titlecase}}</td>
+            <td><button class="btn btn-danger" type="button" (click)="eliminar(item.id)">eliminar</button> </td>
+        </tr>
+    </tbody>
+</table>
+<form class="container">
+    <section class="form-group">
+        <label for="">nombre</label>
+        <input class="form-control" type="text"  name="nombre" [(ngModel)]="nombre">
+    </section>
+    <section class="form-group">
+        <label for="">apellidos</label>
+        <input class="form-control" type="text"  name="apellido" [(ngModel)]="apellido">
+    </section>
+    <section class="form-group">
+        <label for="">carrera</label>
+        <input class="form-control" type="text" name="carrera" [(ngModel)]="carrera">
+    </section>
+    <section>
+        <button type="button" class="btn btn-primary m-3" (click)="agregar()">agregar</button>
+    </section>
+</form>

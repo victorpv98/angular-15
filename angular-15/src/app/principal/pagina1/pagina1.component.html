@@ -1,0 +1,13 @@
+<div class="pokemon-card">
+    <img class="pokemon-image" [src]="pokemon.imageUrl">
+    <div class="pokemon-info">
+      <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+      <div class="pokemon-abilities">
+        <div *ngFor="let ability of pokemon.abilities; let i = index">
+            <div class="pokemon-ability" *ngIf="i!=0">
+                {{ ability }}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

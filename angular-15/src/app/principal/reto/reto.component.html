@@ -1,0 +1,26 @@
+<main class="container">
+    <p>reto works!</p>
+    <h2 class="text-success">interpolación</h2>
+    <h1 class="text-primary">{{titulo | uppercase}} </h1>
+    <h2 class="text-success">event binding</h2>
+    <p>con este boton muestras el contenido</p>
+    <form >
+        <button class="btn btn-primary" type="button" (click)="onclick()">mostrar</button>
+    </form>
+    <section *ngIf="mostrartexto">
+        <p>
+            El recurso del día es un archivo que se actualiza a diario, mostrando los mejores recursos multimedia disponibles en Wikipedia.Desde enero de 2008
+        </p>
+    </section>
+    <h2 class="text-success">two way binding</h2>
+    <p>
+        {{texto}}
+    </p>
+    <form >
+        <section class="form-group">
+            <textarea class="form-control" name="nombre" id="" 
+            cols="30" rows="10" [(ngModel)]="texto"></textarea>
+        </section>
+    </form>
+</main>
+
